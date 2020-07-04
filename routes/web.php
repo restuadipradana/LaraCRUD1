@@ -12,9 +12,7 @@
 */
 
 
-Route::get('/', function () {
-    return view('larahub.pertanyaan.form');
-});
+Route::get('/', 'PertanyaanController@index');
 
 //----------
 
