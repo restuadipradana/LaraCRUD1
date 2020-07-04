@@ -52,4 +52,9 @@ class PertanyaanController extends Controller
         return Redirect::to($link);
     }
 
+    public function delete($id) {
+        $delete = PertanyaanModel::delete($id);
+        return redirect('/pertanyaan');
+    }
+
 }

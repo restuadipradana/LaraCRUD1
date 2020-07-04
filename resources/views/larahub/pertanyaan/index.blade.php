@@ -27,7 +27,13 @@
           <td> {{$item->tanggal_diperbarui}} </td>
           <td> <a class="btn btn-primary" href="/jawaban/{{$item->id}}" role="button">Jawab</a> </td>
           <td> <a class="btn btn-warning" href="/pertanyaan/{{$item->id}}/edit" role="button">Edit</a> </td>
-          <td> <a class="btn btn-danger" href="/pertanyaan/{{$item->id}}" role="button">Hapus</a> </td>
+          <td>  
+            <form action="/pertanyaan/{{$item->id}}" method="POST">
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="btn btn-danger">Hapus</button>
+            </form>
+          </td>
         </tr>                                
       @endforeach
 
@@ -36,3 +42,4 @@
 
 
 @endsection
+

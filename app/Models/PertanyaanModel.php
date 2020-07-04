@@ -33,6 +33,13 @@ class PertanyaanModel {
                     ]);
         return $item;
     }
+
+    public static function delete($id) {
+        $del = DB::table('pertanyaan')
+                    ->where('id', $id)
+                    ->delete();
+        return $del;
+    }
 }
 
 ?>
