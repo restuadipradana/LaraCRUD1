@@ -37,4 +37,19 @@ class PertanyaanController extends Controller
         //return view('larahub.pertanyaan.form');
     }
 
+    public function edit($id) {
+        $pertanyaan = PertanyaanModel::findById($id);
+        //dd($pertanyaan);
+        return view('larahub.pertanyaan.formEdit', compact('pertanyaan'));
+    }
+
+    public function update(Request $request, $id) {
+        $data = $request->all();
+        $dt = array("tanggal_diperbarui" => Carbon::now('Asia/Jakarta')->toDateTimeString());
+        $data = array_merge($data, $dt);
+        $item = PertanyaanModel::update($data, $id);
+        $link = "/jawaban/" . $id;
+        return Redirect::to($link);
+    }
+
 }

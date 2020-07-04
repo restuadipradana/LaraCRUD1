@@ -1,6 +1,9 @@
 @extends('adminlte.master')
 
 @section('content')
+<div class="pt-3 pl-2">
+  <a class="btn btn-primary" href="/pertanyaan/create" role="button">Buat Pertanyaan</a>
+</div>
 <table class="table">
     <thead>
       <tr>
@@ -31,7 +34,5 @@
     </tbody>
   </table>
 
-  <div class="pl-2">
-    <a class="btn btn-primary" href="/pertanyaan/create" role="button">Buat Pertanyaan</a>
-  </div>
+
 @endsection

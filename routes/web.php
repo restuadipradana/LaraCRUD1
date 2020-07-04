@@ -39,3 +39,6 @@ Route::post('/pertanyaan', 'PertanyaanController@store');           //buat perta
 Route::get('/jawaban/{id}', 'JawabanController@index');             //daftar jawaban di 1 pertanyaan (nnti diganti ke /pertanyaan{id})
 Route::get('/jawaban/create/{id}', 'JawabanController@create');     //form jawaban (id pertanyaan) [nanti diganti dengan /jawaban/{id}]
 Route::post('/jawaban/{id}', 'JawabanController@store');            //buat jawaban (id pertanyaan)
+
+Route::get('/pertanyaan/{id}/edit', 'PertanyaanController@edit');   //tampil form update pertanyaan
+Route::put('/pertanyaan/{id}', 'PertanyaanController@update');      //submit form pertanyaan dan kembali ke index
